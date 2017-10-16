@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form #formReference="ngForm" (ngSubmit)="search(searchTerm.value)">
+      <div class="form-group">
+        <label for="beerSearch">Beer Search:</label>
+        <input type="text" class="form-control" id="beerSearch" name="beerSearch" #searchTerm ngModel required>
+      </div>
+      <p *ngIf="!searchResults" style="color:red;">Search yielded no results! Please try again.</p>
+      <button type="submit" class="btn btn-primary" [disabled]="!formReference.valid">Search API</button>
+      <button class="btn btn-danger" [disabled]="!formReference.valid" (click)="clear()">Clear Results</button>
+    </form>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-beer-item *ngFor="let beerEl of beerList" [beer]="beerEl"></app-beer-item>
+  </div>
+</div>

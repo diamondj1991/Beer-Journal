@@ -1,0 +1,79 @@
+<!--<ul>
+  <li *ngFor="let beer of journal | async">
+    {{  beer | json}}
+  </li>
+</ul>
+
+<div class="container">
+  <a href="#" class="list-group-item clearfix" *ngFor="let beer of journal | async">
+    <div class="pull-left">
+      <h4 class="list-group-item-heading">{{ beer.beerName}} - {{ beer.brewery }}</h4>
+      <p class="list-group-item-text"><strong>Category:</strong> {{ beer.category }}</p>
+      <p class="list-group-item-text"><strong>ABV:</strong> {{ beer.abv }}</p>
+      <p class="list-group-item-text"><strong>Recommended Glassware:</strong> {{ beer.glassware }}</p>
+      <p class="list-group-item-text"><strong>Description:</strong> {{ beer.description }}</p>
+      <hr>
+      <div class="form-group">
+        <label for="notes"><strong>Notes: </strong>:</label>
+        <textarea class="form-control" rows="5" id="notes" style="max-width: 50%;"></textarea>
+      </div>
+    </div>
+    <span class="pull-right">
+      <img [src]="beer.icon" alt="{{ beer.beerName }}" style="max-height: 200px;">
+    </span>
+  </a>
+</div> -->
+
+
+<div class="container">
+  <div class="list-group-item clearfix" *ngFor="let beer of journal | async">
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h4 class="list-group-item-heading">{{ beer.beerName}} - {{ beer.brewery }}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="list-group-item-text"><strong>Category:</strong> {{ beer.category }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="list-group-item-text"><strong>ABV:</strong> {{ beer.abv }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="list-group-item-text"><strong>Recommended Glassware:</strong> {{ beer.glassware }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="list-group-item-text"><strong>Description:</strong> {{ beer.description }}</p>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-xs-7">
+        <form>
+          <div class="form-group">
+            <label for="notes"><strong>Notes: </strong></label>
+            <textarea class="form-control" rows="6" id="notes" name="notes" #notes>{{ beer.notes }}</textarea>
+          </div>
+          <button class="btn btn-success" type="button" (click)="onUpdateJournalEntry(beer.$key, beer, notes.value)">Update Entry</button>
+          <button class="btn btn-danger" type="button" (click)="onDeleteJournalEntry(beer.$key)">Remove Beer From Journal</button>
+        </form>
+      </div>
+      <div class="col-xs-5">
+        <img [src]="beer.icon" alt="{{ beer.beerName }}">
+      </div>
+    </div>
+    <p *ngIf="entryUpdated">Entry Updated!</p>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng" [label]="labelOptions">
+    <agm-info-window>
+      <strong>Your current location is Lat: {{ lat }}, Lng: {{ lng }}</strong>
+    </agm-info-window>
+  </agm-marker>
+  <agm-marker *ngFor="let brewery of breweries" [latitude]="brewery.lat" [longitude]="brewery.lng">
+    <agm-info-window>
+      <strong>{{ brewery.name }}</strong>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

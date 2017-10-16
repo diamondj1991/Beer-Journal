@@ -1,0 +1,19 @@
+<a class="list-group-item clearfix" [routerLink]="[beer.id]"  *ngIf="beer.name">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ beer.name }}</h4>
+    <b><p class="list-group-item-text">{{ beer.breweries[0].name }}</p></b>
+    <!-- <p class="list-group-item-text">{{ beer.style.name }}</p> -->
+  </div>
+  <div *ngIf="beer.labels; then icon else no_icon"></div>
+  <ng-template #icon>
+    <span class="pull-right">
+      <img [src]="beer.labels.icon" alt="{{ beer.name }}">
+    </span>
+  </ng-template>
+  <ng-template #no_icon>
+    <span class="pull-right">
+      <img [src]="'https://cdn.dribbble.com/users/266686/screenshots/2740301/beer-icon-02.png'" alt="{{ beer.name }}"
+           class="img-responsive" style="max-height: 50px;">
+    </span>
+  </ng-template>
+</a>

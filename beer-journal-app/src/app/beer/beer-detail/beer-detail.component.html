@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img [src]="beer.icon" alt="{{ beer.name }}" id="icon-exists" class="img-responsive" style="max-height: 300px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>{{ beer.beerName }} - {{ beer.brewery }}</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onAddToDatabase()">Add to Beer Journal</button>
+    <p *ngIf="addedToJournal">Beer Added To Journal!</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h5><strong>Beer Category:</strong> {{ beer.category }}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h5><strong>ABV:</strong> {{ beer.abv }}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h5><strong>Recommended Glassware:</strong> {{ beer.glassware }}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h5><strong>Beer Description:</strong> {{ beer.description }}</h5>
+  </div>
+</div>
+
+
+
+
+

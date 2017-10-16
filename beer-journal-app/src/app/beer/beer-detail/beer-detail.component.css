@@ -1,0 +1,7 @@
+img#icon-exists {
+  border: solid 1px black;
+}
+
+img#icon-doesnt-exist {
+  border: solid 1px black;
+}
