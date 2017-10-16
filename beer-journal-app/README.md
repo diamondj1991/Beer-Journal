@@ -6,7 +6,7 @@
 
 * Authentication through Firebase using Gmail
 
-* User and beer journal data is stored using firebase
+* User and beer journal data is stored using Firebase
 
-* Google maps and Angular Google Maps package is used for the nearby brewery section
+* Angular Google Maps package, and Google Places API are both used for the nearby brewery map section
 
